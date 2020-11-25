@@ -1,0 +1,95 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Ministério do Meio Ambiente</title>
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/61c4764f52.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+
+    <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <a class="navbar-brand" href="/">APS - Sair</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    {% block content %}{% endblock %}
+
+    <div class="card text-center">
+        <div class="card-header">
+            <h3><b>Biometria</b></h3>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Escolha uma impressão digital: </h5>
+            <p class="card-text">Cada usuário possui uma impressão digital predefinida, caso a imagem escolhida não seja<br/>
+            a sua o sistema retornará a uma nova oportunidade de escolha  </p>
+
+           <div class="jumbotron jumbotron-fluid">
+               <div class="container">
+
+                   <div class="row">
+
+                       <div class="col-sm-2">
+                           <div class="card">
+                               <div class="card mb3" >
+                                   <img src="{% static 'imagens/Digital.jpg' %}" class="card-img-top" alt="...">
+                                   <div class="card-body">
+                                       <h5 class="card-title">1 </h5>
+                                       <p class="card-text">1º digital</p>
+                                  </div>
+                                  <a href="#" class="btn btn-primary" >Escolha</a>
+                              </div>
+                           </div>
+                       </div>
+                       <div class="col-sm-2">
+                           <div class="card">
+                               <div class="card mb3" >
+                                   <img src="{% static 'imagens/dig2.jpg' %}" class="card-img-top" alt="...">
+                                   <div class="card-body">
+                                       <h5 class="card-title"> 2</h5>
+                                       <p class="card-text">  2º Digital  </p>
+                                   </div>
+                                   <a href="#" class="btn btn-primary">Escolha</a>
+                               </div>
+                           </div>
+                       </div>
+                         <div class="col-sm-2">
+                           <div class="card">
+                               <div class="card mb3" >
+                                   <img src="{% static 'imagens/Digital.jpg' %}" class="card-img-top" alt="...">
+                                   <div class="card-body">
+                                       <h5 class="card-title">3</h5>
+                                       <p class="card-text">3ºDigital</p>
+                                    </div>
+                                   <a href="#" class="btn btn-primary">Escolha</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="card-footer text-muted">
+                   Biometria Digital
+               </div>
+           </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+    </body>
+</html>

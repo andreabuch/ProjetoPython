@@ -1,0 +1,75 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/61c4764f52.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">APS Biometria </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                <!--Se usuario tem acesso, aparece na barra biometria arquivos -->
+                    {% if user.is_authenticated %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Arquivos </a>
+                    </li>
+
+                    {% else %} <!-- sem acesso ve apenas opção sobre-->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre">Sobre</a>
+                    </li>
+                    {% endif %}
+
+                    {% if user.is_authenticated %} <!-- se usuario estiver logado aparece opção sair-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accounts/logout">Sair </a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </nav>
+
+        {% block content %} {% endblock %}
+    </div>
+        <footer>
+            <div>
+                <p class="lead">
+                    Governo poderá banir do mercado 13 agrotóxicos já proibidos em vários países.
+                </p>
+                <p class="text-center">
+                    O Ministério do Meio Ambiente (MMA), criado em novembro de 1992,<br/>
+                    tem como missão promover a adoção de princípios e estratégias para o conhecimento, <br/>
+                    a proteção e a recuperação do meio ambiente, o uso sustentável dos recursos naturais, a valorização<br/> 
+                    dos serviços ambientais e a inserção do desenvolvimento na formulação e na implementação <br/>
+                    de políticas públicas, de forma transversal e compartilhada, participativa e <br/>
+                    democrática, em todos os níveis de governo e sociedade. 
+                </p>
+            </div>
+        </footer>
+
+    <!-- JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+
+</html>
